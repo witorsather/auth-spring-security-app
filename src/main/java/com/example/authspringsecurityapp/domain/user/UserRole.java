@@ -2,6 +2,7 @@ package com.example.authspringsecurityapp.domain.user;
 
 public enum UserRole {
     ADMIN("admin"),
+    ANALISTY("analyst"),
     USER("user");
 
     private String role;
