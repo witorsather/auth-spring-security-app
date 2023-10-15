@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Table(name = "product")
 @Entity(name = "product")
 @Getter
@@ -19,7 +21,7 @@ public class Product {
 
     private String name;
 
-    private Integer price;
+    private BigDecimal price;
 
     public Product(ProductRequestDTO productRequestDTO) {
         this.name = productRequestDTO.name();

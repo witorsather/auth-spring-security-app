@@ -35,8 +35,8 @@ public class SecurityConfigurations {
                 .csrf(csrf -> csrf.disable()) // você está efetivamente substituindo as configurações padrão por aquelas que deseja aplicar.
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/register").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll() // o permitAll inclui permitir todo mundo sem autenticação e autorização
+                        .requestMatchers(HttpMethod.POST, "/auth/register").hasRole("ADMIN") // o hasRole quer dizer que a pessoa já tem que está autenticada pra daí olhar sua autorização ADMIN, ou seja preciso passar bearer token
                         .requestMatchers(HttpMethod.POST, "/product").hasRole("ANALYST") // As linhas anteriores especificam que o usuário deve estar autenticado e ter uma determinada função (role) para acessar endpoints específicos.
                         .anyRequest().authenticated() // Já a última linha indica que para todos os outros endpoints não mencionados anteriormente, o usuário precisa apenas estar autenticado, independentemente de sua função (role).
                 )
@@ -52,10 +52,12 @@ public class SecurityConfigurations {
     // O método authenticationManager.authenticate(usernamePassword) é responsável por iniciar o processo de autenticação no Spring Security. Durante esse processo,
     // o Spring Security utiliza o UserDetailsService para carregar os detalhes do usuário com base no nome de usuário (login) fornecido no usernamePassword.
     // Isso significa que, ao chamar authenticationManager.authenticate(usernamePassword), o Spring Security automaticamente recorre ao UserDetailsService para obter os detalhes do usuário correspondente ao login fornecido.
+    @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+    @Bean
     public PasswordEncoder passwordEncoder() { // PasswordEncoder é uma interface do spring security para codificar e decodificar senhas
         return new BCryptPasswordEncoder(); // BCryptPassworEncoder é uma classe que implementa a interface PasswordEncoder do Spring Security e usa o algoritmo de criptografia BCrypt
         // algoritm BCrypt é uma função de hash segura, transforma a senha em uma representação hash, ele gera uma salga, tipo uma secret mas com valor aleatório impedindo atacantes com ataque de força bruta de usar tabelas hash pré-computadas
