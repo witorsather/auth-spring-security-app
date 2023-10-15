@@ -29,7 +29,7 @@ Vamos usar uma analogia para entender o Spring Security como uma festa.
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/Fernanda-Kipper/auth-api.git
+git clone https://github.com/witorsather/auth-spring-security-app.git
 ```
 
 2. Instale as dependências com o Maven.
