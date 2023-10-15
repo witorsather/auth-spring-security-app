@@ -10,7 +10,7 @@ Este projeto é uma API construída utilizando **Java, Java Spring, Flyway Migra
 
 ## Sumário
 
-- [Visão Geral da Arquitetura](#visao-geral-da-arquitetura)
+- [Visão Geral da Arquitetura](#visão-geral-da-arquitetura)
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [EndPoints da API](#endpoints-da-api)
