@@ -73,7 +73,6 @@ Anexado em /utilidades o arquivo insomnia usado.
 #### ANALYST -> Papel de analista para publicar novos produtos (registro de novos produtos).
 ![ANALYST](utilidades/insomnia/product-post-role-analyst.png)
 
-
 ## Banco de Dados
 O projeto utiliza o [PostgresSQL](https://www.postgresql.org/) como banco de dados.
 
