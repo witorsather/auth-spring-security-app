@@ -10,12 +10,20 @@ Este projeto é uma API construída utilizando **Java, Java Spring, Flyway Migra
 
 ## Sumário
 
+- [Arquitetura do Projeto](#arquitetura-do-projeto)
 - [Instalação](#instalação)
 - [Configuração](#configuração)
 - [Uso](#uso)
-- [Pontos de Extremidade da API](#pontos-de-extremidade-da-api)
+- [EndPoints da API](#endpoints-da-api)
 - [Autenticação](#autenticação)
 - [Banco de Dados](#banco-de-dados)
+
+## Visão Geral da Arquitetura
+ Aqui apresentamos um diagrama que esclarece a estrutura do projeto.
+![arquitetura](utilidades/diagramas/diagrama-projeto.png)
+
+Vamos usar uma analogia para entender o Spring Security como uma festa.
+![analogia](utilidades/diagramas/diagrama-spring-security-festa.png)
 
 ## Instalação
 
